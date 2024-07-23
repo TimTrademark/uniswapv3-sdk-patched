@@ -1,7 +1,5 @@
-import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import { Tick } from '../entities/tick'
-import { ZERO } from '../internalConstants'
 import { isSorted } from './isSorted'
 
 function tickComparator(a: Tick, b: Tick) {
