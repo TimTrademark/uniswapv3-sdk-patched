@@ -7,7 +7,7 @@ Check out my Medium post for more info.
 
 # Start using this fork
 
-One can simply call any pool/price related functions within the official SDK to work with this fork. All that has changed is that the constraint for pools to have all ticks pre-fetched is removed. Take the following exmaple:
+One can simply call any pool/price related functions within the official SDK to work with this fork. All that has changed is that the constraint for pools to have all ticks pre-fetched is removed. Take the following example:
 
 ```
 // initialize tickDataProvider
