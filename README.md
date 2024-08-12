@@ -1,9 +1,39 @@
-# Alpha software
+> Forked from https://github.com/Uniswap/sdks/tree/main/sdks/v3-sdk
 
-The latest version of the SDK is used in production in the Uniswap Interface,
-but it is considered Alpha software and may contain bugs or change significantly between patch versions.
-If you have questions about how to use the SDK, please reach out in the `#dev-chat` channel of the Discord.
-Pull requests welcome!
+# Patched SDK
+
+This repo contains a patch for the uniswapv3 sdk, that allows for partial ticklists (remove the constraint for all ticks to be fetched before quoting).
+Check out my Medium post for more info.
+
+# Start using this fork
+
+One can simply call any pool/price related functions within the official SDK to work with this fork. All that has changed is that the constraint for pools to have all ticks pre-fetched is removed. Take the following exmaple:
+
+```
+// initialize tickDataProvider
+const ticksMapped = myFetchedTicks.map(
+      (t) =>
+        new Tick({
+          index: parseInt(t.index),
+          liquidityGross: t.liquidityGross,
+          liquidityNet: t.liquidityNet,
+        })
+    );
+const tickDataProvider = new TickListDataProvider(ticksMapped, parseInt(res.tickSpacing));
+//calculate output amount
+const amountOut = await v3Swap(
+    JSBI.BigInt(fee),
+    JSBI.BigInt(sqrtPriceX96),
+    parseInt(currentTick),
+    JSBI.BigInt(currentLiquidity),
+    parseInt(tickSpacing),
+    tickDataProvider,
+    zeroForOne,
+    amountSpecified,
+    sqrtPriceLimitX96
+);
+
+```
 
 # Uniswap V3 SDK
 
