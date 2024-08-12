@@ -3,7 +3,7 @@
 # Patched SDK
 
 This repo contains a patch for the uniswapv3 sdk, that allows for partial ticklists (remove the constraint for all ticks to be fetched before quoting).
-Check out my Medium post for more info.
+Check out my [Medium post](https://medium.com/@tim.truyens56/why-calculating-uniswapv3-prices-is-so-hard-for-mev-and-how-to-fix-it-ec74cc7c4fe9) for more info.
 
 # Start using this fork
 
@@ -34,10 +34,3 @@ const amountOut = await v3Swap(
 );
 
 ```
-
-# Uniswap V3 SDK
-
-[![npm version](https://img.shields.io/npm/v/@uniswap/v3-sdk/latest.svg)](https://www.npmjs.com/package/@uniswap/v3-sdk/v/latest)
-[![npm bundle size (scoped version)](https://img.shields.io/bundlephobia/minzip/@uniswap/v3-sdk/latest.svg)](https://bundlephobia.com/result?p=@uniswap/v3-sdk@latest)
-
-In-depth documentation on this SDK is available at [uniswap.org](https://docs.uniswap.org/).
